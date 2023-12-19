@@ -173,6 +173,48 @@ void task2variant2(){
     printf("1  Cent:\t%d\n", cent1);
 }
 
+void task3(){
+    int amount = 12;
+    int starsCount = 1;
+
+    for(int i = 0; i < amount;i++){
+        int spacing = (((amount*2)-1)-starsCount)/2;
+
+        for(int j = 0; j < spacing; j++){
+            printf(" ");
+        }
+        for(int j = 0; j < starsCount; j++){
+            printf("*");
+        }
+        for(int j = 0; j < spacing; j++){
+            printf(" ");
+        }
+        printf("\n");
+
+        starsCount = starsCount + 2;
+    }
+
+    starsCount = starsCount -4;
+
+    for(int i = 0; i < amount -1; i++){
+        int spacing = (((amount*2)-1)-starsCount)/2;
+
+        for(int j = 0; j < spacing; j++){
+            printf(" ");
+        }
+        printf("*");
+        for(int j = 0; j < starsCount-2; j++){
+            printf(" ");
+        }
+        if(i != amount-2){
+            printf("*");
+        }
+        printf("\n");
+
+        starsCount = starsCount - 2;
+    }
+}
+
 int main()
 {
     task1();
@@ -180,6 +222,8 @@ int main()
     task2variant1();
     printf("\n\n\n");
     task2variant2();
+    printf("\n\n\n");
+    task3();
     printf("\n\n\n");
     return 0;
 }
